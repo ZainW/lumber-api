@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170327172519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "heroes", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_url"
+    t.integer "base_str"
+    t.integer "base_agi"
+    t.integer "base_int"
+    t.float "add_str"
+    t.float "add_agi"
+    t.float "add_int"
+    t.integer "move_speed"
+    t.float "turn_rate"
+    t.string "attack_type"
+    t.jsonb "talents"
+    t.integer "attack_range"
+    t.string "hero_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

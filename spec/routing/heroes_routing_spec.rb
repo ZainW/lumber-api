@@ -7,32 +7,32 @@ RSpec.describe HeroesController, type: :routing do
       expect(:get => "/heroes").to route_to("heroes#index")
     end
 
-    it "routes to #new" do
-      expect(:get => "/heroes/new").to route_to("heroes#new")
-    end
+    # it "routes to #new" do
+    #   expect(:get => "/heroes/new").to route_to("heroes#new")
+    # end
 
     it "routes to #show" do
-      expect(:get => "/heroes/1").to route_to("heroes#show", :id => "1")
+      expect(:get => "/heroes/Anti-Mage").to route_to("heroes#show", :name => "Anti-Mage")
     end
 
-    it "routes to #edit" do
-      expect(:get => "/heroes/1/edit").to route_to("heroes#edit", :id => "1")
-    end
+    # it "routes to #edit" do
+    #   expect(:get => "/heroes/Anti/edit").to route_to("heroes#edit", :name => "Anti")
+    # end
 
     it "routes to #create" do
       expect(:post => "/heroes").to route_to("heroes#create")
     end
 
     it "routes to #update via PUT" do
-      expect(:put => "/heroes/1").to route_to("heroes#update", :id => "1")
+      expect(:put => "/heroes/Anti").to route_to("heroes#update", :name => "Anti")
     end
 
     it "routes to #update via PATCH" do
-      expect(:patch => "/heroes/1").to route_to("heroes#update", :id => "1")
+      expect(:patch => "/heroes/Anti").to route_to("heroes#update", :name => "Anti")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/heroes/1").to route_to("heroes#destroy", :id => "1")
+      expect(:delete => "/heroes/Anti").to route_to("heroes#destroy", :name => "Anti")
     end
 
   end
