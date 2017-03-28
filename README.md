@@ -1,24 +1,19 @@
-# README
+This is the Lumber DotA 2 API based on Ruby 2.4.0 and Ruby on Rails 5.0.2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tests are made in Rspec
 
-Things you may want to cover:
+Seed files for the Databse are hidden until they are complete (Constantly changing)
 
-* Ruby version
+It is currently in Development mode only, not production ready
 
-* System dependencies
+It is Running a Postgres 9.6 although 9.4 and 9.5 should work fine.
 
-* Configuration
+To run tests run rspec
 
-* Database creation
+If you would liek to contribute to the project, take into consideration that I am very new at this so be patient with me....
 
-* Database initialization
+Also won't accept pull requests that don't have an appropriate test or modification to the existing tests!
 
-* How to run the test suite
+#This is a project that is going through heavey changes and rapid developement, this is not ready for other to use at this point!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+if you have any questions join the Development Discord at https://discord.gg/dCXxbVh
