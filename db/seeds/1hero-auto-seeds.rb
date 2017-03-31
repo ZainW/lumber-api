@@ -5,8 +5,6 @@ heroes = %w[ Alchemist Beastmaster Brewmaster Bristleback Centaur_Warrunner Cloc
 
 
 heroes.each do |hero|
-  # doc = Nokogiri::HTML(open("http://wiki.teamliquid.net/dota2/index.php?title=#{hero}&action=edit", :read_timeout => 60))
-  # textareas = doc.xpath("//textarea")
   json = Net::HTTP.get('wiki.teamliquid.net', "/dota2/api.php?page=#{hero}&action=parse&format=json&prop=wikitext")
   hash_new = {}
   stuff = JSON.parse(json)["parse"]["wikitext"]['*'].split("\n").each do |line|
@@ -17,9 +15,6 @@ heroes.each do |hero|
       if line[0] && hash_new.keys.include?(line[0].to_sym) then line[0] = line[0] + "_1" end
       hash_new.merge!("#{line[0]}": "#{line[1]}")
     end
-    # if hero =="Tusk"
-    #   binding.pry
-    # end
   end
   puts hero
 
