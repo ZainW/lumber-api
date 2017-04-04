@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :items, param: :name
   resources :heroes, param: :name do
     resources :abilities
   end
