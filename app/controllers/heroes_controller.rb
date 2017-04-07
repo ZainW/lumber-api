@@ -42,7 +42,7 @@ class HeroesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hero
-      search = Hero.search "params", fields: [:name]
+      search = Hero.search "#{params[:name]}", fields: [:name]
       if search.results == []
         Hero.find_by!(name: "nil")
       else
