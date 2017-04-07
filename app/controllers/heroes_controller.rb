@@ -42,7 +42,13 @@ class HeroesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_hero
-      @hero = Hero.find_by!(name: params[:name])
+      search = Hero.search "params", fields: [:name]
+      if search.results == []
+        Hero.find_by!(name: "nil")
+      else
+        @hero = search.results[0]
+      end
+      # @hero = Hero.find_by!(name: params[:name])
     end
 
     # Only allow a trusted parameter "white list" through.
