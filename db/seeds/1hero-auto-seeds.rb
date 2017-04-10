@@ -11,7 +11,7 @@ heroes.each do |hero|
     if line.include?("=")
       line = line.split("=")
       line[0] = line[0].gsub!(/[^0-9A-Za-z]/, '')
-      if line[1] then line[1].gsub!(/[^0-9A-Za-z\%\+\-\ \.]/, '') end
+      if line[1] then line[1].gsub!(/[^0-9A-Za-z\%\+\-\ \.\/]/, '') end
       if line[0] && hash_new.keys.include?(line[0].to_sym) then line[0] = line[0] + "_1" end
       hash_new.merge!("#{line[0]}": "#{line[1]}")
     end
