@@ -3,4 +3,9 @@ class Hero < ApplicationRecord
 
   has_many :abilities
   searchkick
+  def search_data
+    {
+      name: name
+    }
+  end
 end

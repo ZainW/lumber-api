@@ -46,9 +46,8 @@ class HeroesController < ApplicationController
       if search.results == []
         Hero.find_by!(name: "nil")
       else
-        @hero = search.results[0]
+        @hero = search.results.first
       end
-      # @hero = Hero.find_by!(name: params[:name])
     end
 
     # Only allow a trusted parameter "white list" through.
