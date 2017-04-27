@@ -7,11 +7,11 @@ heroes = %w[ Alchemist Beastmaster Brewmaster Bristleback Centaur_Warrunner Cloc
 heroes.each do |hero|
   json = Net::HTTP.get('wiki.teamliquid.net', "/dota2/api.php?page=#{hero}&action=parse&format=json&prop=wikitext")
   hash_new = {}
-  stuff = JSON.parse(json)["parse"]["wikitext"]['*'].split("\n").each do |line|
+  JSON.parse(json)["parse"]["wikitext"]['*'].split("\n").each do |line|
     if line.include?("=")
       line = line.split("=")
       line[0] = line[0].gsub!(/[^0-9A-Za-z]/, '')
-      if line[1] then line[1].gsub!(/[^0-9A-Za-z\%\+\-\ \.\/]/, '') end
+      if line[1] then line[1].gsub!(/[^0-9A-Za-z\%\+\-\ \.\/\']/, '') end
       if line[0] && hash_new.keys.include?(line[0].to_sym) then line[0] = line[0] + "_1" end
       hash_new.merge!("#{line[0]}": "#{line[1]}")
     end
