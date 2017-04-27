@@ -16,7 +16,7 @@ heroes.each do |hero|
   end
   starts = []
   ends = []
-  test = JSON.parse(json)["parse"]["wikitext"]['*'].split("\n").to_a.each_with_index do |line, index|
+ JSON.parse(json)["parse"]["wikitext"]['*'].split("\n").to_a.each_with_index do |line, index|
     if line.strip == "{{SpellCard"
       starts << index
     elsif line.strip == "}}"
@@ -46,7 +46,7 @@ heroes.each do |hero|
 
   spells.each do |spell|
     puts hero
-    Ability.create(name: spell[:name], more: spell, hero_id: Hero.find_by(name: hero.gsub("_", " ").gsub("'", "")).id)
+    Ability.create(name: spell[:name], more: spell, hero_id: Hero.search("#{hero.tr("_", " ")}").results.first.id)
   end
 
 end
