@@ -50,3 +50,4 @@ heroes.each do |hero|
   end
 
 end
+Ability.reindex

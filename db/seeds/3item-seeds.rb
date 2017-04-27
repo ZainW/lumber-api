@@ -26,3 +26,4 @@ items.each do |item|
   end
   Item.create!(name: hash_new["itemname"], more: hash_new)
 end
+Item.reindex

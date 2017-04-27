@@ -39,3 +39,4 @@ heroes.each do |hero|
     level25: [hash_new[:t4left], hash_new[:t4right]]
   })
 end
+Hero.reindex
