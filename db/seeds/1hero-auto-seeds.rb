@@ -23,14 +23,14 @@ heroes.each do |hero|
   attack_type = attackrangehold.gsub!(/[^A-Za-z]/, '')
   attack_type.slice!("abbr")
 
-  hash_new[:t1left].slice!("talent")
-  hash_new[:t1right].slice!("talent")
-  hash_new[:t2left].slice!("talent")
-  hash_new[:t2right].slice!("talent")
-  hash_new[:t3left].slice!("talent")
-  hash_new[:t3right].slice!("talent")
-  hash_new[:t4left].slice!("talent")
-  hash_new[:t4right].slice!("talent")
+  hash_new[:t1left].tr('\'', '').slice!("talent")
+  hash_new[:t1right].tr('\'', '').slice!("talent")
+  hash_new[:t2left].tr('\'', '').slice!("talent")
+  hash_new[:t2right].tr('\'', '').slice!("talent")
+  hash_new[:t3left].tr('\'', '').slice!("talent")
+  hash_new[:t3right].tr('\'', '').slice!("talent")
+  hash_new[:t4left].tr('\'', '').slice!("talent")
+  hash_new[:t4right].tr('\'', '').slice!("talent")
 
   Hero.create!(name: hash_new[:heroname], base_str: hash_new[:basestr], add_str: hash_new[:strgain], base_agi: hash_new[:baseagi], add_agi: hash_new[:agigain], base_int: hash_new[:baseint], add_int: hash_new[:intgain], move_speed: hash_new[:basespeed], turn_rate: hash_new[:basespeed], attack_type: attack_type, hero_type: hash_new[:mainattribute], attack_range: attack_range, talents: {
     level10: [hash_new[:t1left], hash_new[:t1right]],
