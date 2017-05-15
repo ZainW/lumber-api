@@ -18,3 +18,5 @@ config/secrets*
 config/database*
 config/cable*
 createcsvs.rb
+/config/deploy/*
+/config/deploy.rb
