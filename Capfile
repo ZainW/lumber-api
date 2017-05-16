@@ -27,15 +27,16 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/passenger
 #
 # require "capistrano/rvm"
+require 'capistrano/bundler'
 require "capistrano/rbenv"
 # install_plugin Capistrano::Rbenv
 require "capistrano/puma"
-require 'capistrano/bundler' # Rails needs Bundler, right?
+ # Rails needs Bundler, right?
 # require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 # require 'capistrano/nginx'
-require 'capistrano/puma/nginx'
-require 'capistrano/upload-config'
+# require 'capistrano/puma/nginx'
+# require 'capistrano/upload-config'
 
 # require "capistrano/chruby"
 # require "capistrano/bundler"
@@ -43,7 +44,7 @@ require 'capistrano/upload-config'
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 install_plugin Capistrano::Puma
-install_plugin Capistrano::Puma::Jungle
-install_plugin Capistrano::Puma::Nginx
+# install_plugin Capistrano::Puma::Jungle
+# install_plugin Capistrano::Puma::Nginx
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
