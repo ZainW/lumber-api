@@ -37,6 +37,8 @@ group :development do
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano3-nginx'
+  gem 'capistrano-upload-config'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.5'
